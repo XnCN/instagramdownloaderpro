@@ -32,7 +32,7 @@ You can install on npm
 ## Usage
 
 ```
-import InstagramDownloader from "@xncn/instagramdownloaderpro";
+import {InstagramService} from "@xncn/instagramdownloaderpro";
 
 async function Run() {
   const instagram = new InstagramService();
