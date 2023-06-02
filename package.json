@@ -1,15 +1,32 @@
 {
-  "name": "instagramdownloaderpro",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@xncn/instagramdownloaderpro",
+  "version": "0.0.2",
+  "description": "This project provide an instagram api wrapper.You can use in your web services and mobile applications.Instagram downloader library is using picuki.com and igdownloader.app",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "start": "node ./dist/index.js",
     "dev": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "instagram",
+    "downloader",
+    "instagram",
+    "downloader",
+    "typescript",
+    "reals",
+    "photo",
+    "gallery",
+    "content",
+    "posts",
+    "stories",
+    "comments",
+    "pagination"
+  ],
+  "author": "XnCN",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",

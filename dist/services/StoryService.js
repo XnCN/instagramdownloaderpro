@@ -32,8 +32,10 @@ class StoryService {
                     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                 },
             });
-            const dom = (0, node_html_parser_1.default)(data.stories_container);
             const stories = [];
+            if (data.stories_container == undefined)
+                return stories;
+            const dom = (0, node_html_parser_1.default)(data.stories_container);
             var storyFeed = dom.querySelectorAll(".owl-stories .item");
             storyFeed.forEach((s) => stories.push(StoryParser_1.default.parse(s)));
             return stories;

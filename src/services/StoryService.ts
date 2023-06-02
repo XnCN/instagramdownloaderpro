@@ -26,8 +26,9 @@ class StoryService implements IStoryService {
         },
       }
     );
-    const dom = parse(data.stories_container);
     const stories: StoryResponse[] = [];
+    if (data.stories_container == undefined) return stories;
+    const dom = parse(data.stories_container);
     var storyFeed = dom.querySelectorAll(".owl-stories .item");
     storyFeed.forEach((s) => stories.push(StoryParser.parse(s)));
     return stories;
