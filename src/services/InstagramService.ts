@@ -15,6 +15,9 @@ class InstagramService {
   postService: IPostService;
   storyService: IStoryService;
   downloadService: IDownloadService;
+  constructor() {
+    this.downloadService = new DownloadService();
+  }
   async getUserData(username: string) {
     const { data } = await http.get(`/profile/${username}`);
     this.dom = parse(data);
@@ -24,7 +27,6 @@ class InstagramService {
     this.userService = new UserService(this.dom);
     this.postService = new PostService(this.dom);
     this.storyService = new StoryService(this.dom);
-    this.downloadService = new DownloadService();
   }
 }
 

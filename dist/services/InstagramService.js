@@ -19,6 +19,9 @@ const PostService_1 = __importDefault(require("./PostService"));
 const StoryService_1 = __importDefault(require("./StoryService"));
 const DownloadService_1 = __importDefault(require("./DownloadService"));
 class InstagramService {
+    constructor() {
+        this.downloadService = new DownloadService_1.default();
+    }
     getUserData(username) {
         return __awaiter(this, void 0, void 0, function* () {
             const { data } = yield Api_1.default.get(`/profile/${username}`);
@@ -30,7 +33,6 @@ class InstagramService {
         this.userService = new UserService_1.default(this.dom);
         this.postService = new PostService_1.default(this.dom);
         this.storyService = new StoryService_1.default(this.dom);
-        this.downloadService = new DownloadService_1.default();
     }
 }
 exports.default = InstagramService;

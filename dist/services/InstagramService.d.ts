@@ -9,6 +9,7 @@ declare class InstagramService {
     postService: IPostService;
     storyService: IStoryService;
     downloadService: IDownloadService;
+    constructor();
     getUserData(username: string): Promise<void>;
     bootServices(): void;
 }
