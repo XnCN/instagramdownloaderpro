@@ -1,6 +1,6 @@
 {
   "name": "@xncn/instagramdownloaderpro",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "This project provide an instagram api wrapper.You can use in your web services and mobile applications.Instagram downloader library is using picuki.com and igdownloader.app",
   "main": "dist/index.js",
   "homepage": "https://github.com/XnCN/instagramdownloaderpro",
