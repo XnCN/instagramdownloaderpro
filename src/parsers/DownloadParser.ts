@@ -7,7 +7,7 @@ class DownloadParser implements IParser<DownloadResponse> {
     const thumb = dom.querySelector(".download-items__thumb img")?.attributes[
       "src"
     ];
-    const url = dom.querySelector(".download-items__btn a")?.attributes["href"];
+    const url = dom.querySelector(".download-items__btn:not(.dl-thumb) a")?.attributes["href"];
     return {
       thumb,
       url,
