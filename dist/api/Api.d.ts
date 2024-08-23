@@ -1,3 +1,6 @@
-import { AxiosInstance } from "axios";
-declare const http: AxiosInstance;
-export default http;
+declare const fetchClient: {
+    get(path: string): Promise<{
+        data: string;
+    }>;
+};
+export default fetchClient;

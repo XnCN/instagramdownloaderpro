@@ -16,7 +16,6 @@ const node_html_parser_1 = require("node-html-parser");
 const Api_1 = __importDefault(require("../api/Api"));
 const UserService_1 = __importDefault(require("./UserService"));
 const PostService_1 = __importDefault(require("./PostService"));
-const StoryService_1 = __importDefault(require("./StoryService"));
 const DownloadService_1 = __importDefault(require("./DownloadService"));
 class InstagramService {
     constructor() {
@@ -32,7 +31,6 @@ class InstagramService {
     bootServices() {
         this.userService = new UserService_1.default(this.dom);
         this.postService = new PostService_1.default(this.dom);
-        this.storyService = new StoryService_1.default(this.dom);
     }
 }
 exports.default = InstagramService;

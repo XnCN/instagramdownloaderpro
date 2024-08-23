@@ -22,9 +22,11 @@ class DownloadService {
                 recaptchaToken: null,
                 q: url,
                 t: "media",
+                v: "v2",
             });
             if (data.status != "ok")
                 throw Error("Api error");
+            //encrytpe data
             const dom = (0, node_html_parser_1.default)(data.data);
             const downloadItems = [];
             const items = dom.querySelectorAll(".download-box li");

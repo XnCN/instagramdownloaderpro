@@ -3,8 +3,4 @@ export default interface ProfileInfoResponse {
   userName?: string;
   name?: string;
   profilePicture?: string;
-  description?: string;
-  postCount?: string;
-  followerCount?: string;
-  followingCount?: string;
 }

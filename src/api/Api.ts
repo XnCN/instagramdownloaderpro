@@ -8,4 +8,12 @@ const http: AxiosInstance = axios.create({
   },
 });
 
-export default http;
+const fetchClient = {
+  async get(path: string) {
+    const data = await fetch(`https://www.picuki.com${path}`);
+    const body = await data.text();
+    return { data: body };
+  },
+};
+
+export default fetchClient;

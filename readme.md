@@ -1,24 +1,22 @@
 # Instagram Downloader Pro
 
-This project provide an instagram api wrapper.You can use in your web services and mobile applications.Instagram downloader library is using `picuki.com` and `igdownloader.app`.
+This project provide an instagram api wrapper.You can use in your web services and mobile applications.Instagram downloader library is using `picuki.com` and `igdownloader.app->Disabled for short time`.
 
 ## Features
 
 - Photo Download
 - Gallery Download
 - Video Download
-- Story Download
 - Profile View
 - Profile Post Pagination
-- Profile Stories
+- Profile Stories[Piciku Disabled]
 - Post/Video comments
 - Profile Info
 
 ## Services
 
-- Download Service
+- Download Service[Disabled For Short Time]
 - Post Service
-- Story Service
 - User Service
 
 ## Install
@@ -46,7 +44,7 @@ Run();
 
 \*dont forget to call getUserData() for all services without download service.
 
-### Download Service
+### Download Service[Disabled For Short Time]
 
 You can get downloadable links with download service
 
@@ -85,10 +83,6 @@ console.log(userData);
     userName?: string;
     name?: string;
     profilePicture?: string;
-    description?: string;
-    postCount?: string;
-    followerCount?: string;
-    followingCount?: string;
   }
 ```
 
@@ -121,27 +115,6 @@ You can get user posts with pagination
       createdAt?: string;
     ]
   }
-```
-
-### Story Service
-
-You can get user stories with story service
-
-```
-  const stories = await instagram.storyService.getStories();
-  console.log(stories);
-```
-
-#### Example Response[StoryResponse[]]
-
-```
- [
-   {
-    poster?: string;
-    background?: string;
-    video?: string;
-   }
- ]
 ```
 
 ### Comment Service

@@ -10,8 +10,10 @@ class DownloadService implements IDownloadService {
       recaptchaToken: null,
       q: url,
       t: "media",
+      v: "v2",
     });
     if (data.status != "ok") throw Error("Api error");
+    //encrytpe data
     const dom = parse(data.data);
     const downloadItems: DownloadResponse[] = [];
     const items = dom.querySelectorAll(".download-box li");
