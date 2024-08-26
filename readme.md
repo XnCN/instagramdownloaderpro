@@ -1,6 +1,6 @@
 # Instagram Downloader Pro
 
-This project provide an instagram api wrapper.You can use in your web services and mobile applications.Instagram downloader library is using `picuki.com` and `igdownloader.app->Disabled for short time`.
+This project provide an instagram api wrapper.You can use in your web services and mobile applications.Instagram downloader library is using `picuki.com` and `savevid.net`.
 
 ## Features
 
@@ -15,7 +15,7 @@ This project provide an instagram api wrapper.You can use in your web services a
 
 ## Services
 
-- Download Service[Disabled For Short Time]
+- Download Service
 - Post Service
 - User Service
 
@@ -44,7 +44,7 @@ Run();
 
 \*dont forget to call getUserData() for all services without download service.
 
-### Download Service[Disabled For Short Time]
+### Download Service
 
 You can get downloadable links with download service
 
