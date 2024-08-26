@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const DownloadApi_1 = __importDefault(require("../api/DownloadApi"));
 const node_html_parser_1 = __importDefault(require("node-html-parser"));
 const DownloadParser_1 = __importDefault(require("../parsers/DownloadParser"));
+const DownloadDecrypteHelper_1 = __importDefault(require("../helpers/DownloadDecrypteHelper"));
 class DownloadService {
     Download(url) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -26,10 +27,10 @@ class DownloadService {
             });
             if (data.status != "ok")
                 throw Error("Api error");
-            //encrytpe data
-            const dom = (0, node_html_parser_1.default)(data.data);
+            const parsedBody = (0, DownloadDecrypteHelper_1.default)(data.data);
+            const dom = (0, node_html_parser_1.default)(parsedBody);
             const downloadItems = [];
-            const items = dom.querySelectorAll(".download-box li");
+            const items = dom.querySelectorAll(".download-box li .download-items");
             items.forEach((i) => {
                 const item = DownloadParser_1.default.parse(i);
                 if (item.url != undefined)

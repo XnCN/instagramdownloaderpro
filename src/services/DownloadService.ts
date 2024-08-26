@@ -3,6 +3,7 @@ import DownloadResponse from "../response/DownloadResponse";
 import download from "../api/DownloadApi";
 import parse from "node-html-parser";
 import DownloadParser from "../parsers/DownloadParser";
+import DecrypteDownload from "../helpers/DownloadDecrypteHelper";
 
 class DownloadService implements IDownloadService {
   async Download(url: string): Promise<DownloadResponse[]> {
@@ -13,10 +14,10 @@ class DownloadService implements IDownloadService {
       v: "v2",
     });
     if (data.status != "ok") throw Error("Api error");
-    //encrytpe data
-    const dom = parse(data.data);
+    const parsedBody = DecrypteDownload(data.data);
+    const dom = parse(parsedBody);
     const downloadItems: DownloadResponse[] = [];
-    const items = dom.querySelectorAll(".download-box li");
+    const items = dom.querySelectorAll(".download-box li .download-items");
     items.forEach((i) => {
       const item = DownloadParser.parse(i);
       if (item.url != undefined) downloadItems.push(item);
